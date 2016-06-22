@@ -1,0 +1,14 @@
+Hostname:  {{ inventory_hostname }}
+Def IPv4:  {{ ansible_default_ipv4.address|default('No IPv4 address detected') }}
+Def IPv6:  {{ ansible_default_ipv6.address|default('No IPv6 address detected') }}
+Distro:    {{ ansible_distribution }} {{ ansible_distribution_version }} {{ ansible_distribution_release }}
+Virtual:   {{ 'True' if ansible_virtualization_role == 'guest' else 'False' }}
+Arch:      {{ ansible_architecture }}
+CPUs:      {{ ansible_processor_vcpus }}
+RAM:       {{ (ansible_memtotal_mb / 1000) | round(1) }}GB
+Provider:  {{ SERVER_PROVIDER|default('No Server Provider given') }}
+Location:  {{ SERVER_LOCATION|default('No Server location given') }}
+Descript:  {{ SERVER_DESCRIPTION|default('No description given') }}
+AnsiGroup: {% for group in group_names %}{% for host in groups[group] %}{% if host == inventory_hostname %}{{ group }}{% endif %} {% endfor %}{% endfor %}
+
+AnsiDepl:  !! DEPLOYMENT IN PROGRESS !!

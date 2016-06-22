@@ -1,0 +1,16 @@
+---
+- include: wall.yml
+
+# Set hostname to inventory_hostname
+- include: hostname.yml
+
+# Generate custom motd file
+- include: motd.yml
+
+# Generate /etc/hosts file
+- include: hosts.yml
+
+- include: upgrade.yml
+
+- include: firewalld.yml
+  when: disable_firewalld

@@ -27,7 +27,7 @@ To use this role you add the following as the name of the role:
 
     - hosts: servers
       roles:
-         - { role: galexrt.ansible-pre-deploy }
+         - { role: galexrt.pre-deploy }
 
 License
 -------

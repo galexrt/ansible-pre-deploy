@@ -1,9 +1,7 @@
 ---
 - name: Send out ansible deployment started broadcast message
   shell: |
-    echo '+-------------------------------------------+
-    | =>   ANSIBLE DEPLOYMENT HAS STARTED!   <= |
-    +===========================================+
-    | Please close all connections if possible! |
-    +-------------------------------------------+' | wall
+    echo '+---------------------------------------+
+    | => ANSIBLE DEPLOYMENT HAS STARTED! <= |
+    +---------------------------------------+' | wall
   ignore_errors: true

@@ -13,7 +13,7 @@ No special requirements.
 Role Variables
 --------------
 
-Please check the file `vars/all.yml` to see what variables are available.
+See the file `default/main.yml`, for available variables.
 
 Dependencies
 ------------

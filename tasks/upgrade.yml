@@ -1,5 +1,6 @@
 ---
-- fail: "Invalid Ansible apt upgrade mode given."
+- fail:
+    msg: "Invalid Ansible apt upgrade mode given."
   when: upgrade_mode is defined and (upgrade_mode != "no" and upgrade_mode != "yes" and upgrade_mode != "safe" and upgrade_mode != "full" and upgrade_mode != "dist")
 
 - name: Upgrade all packages (rhel)

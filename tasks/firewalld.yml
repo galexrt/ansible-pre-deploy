@@ -37,10 +37,3 @@
     name: firewalld
     state: stopped
   when: has_firewalld
-
-- name: Remove firewalld package
-  action: "{{ ansible_pkg_mgr }}"
-  args:
-    name: "firewalld"
-    state: absent
-  when: has_firewalld

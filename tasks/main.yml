@@ -17,4 +17,4 @@
 
 - include: firewalld.yml
   when: disable_firewalld
-test
+

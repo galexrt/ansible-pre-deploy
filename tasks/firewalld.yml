@@ -5,3 +5,10 @@
     state: stopped
     enabled: no
   when: has_firewalld
+
+- name: Remove firewalld service
+  action: "{{ ansible_pkg_mgr }}"
+  args:
+    name: firewalld
+    state: absent
+  when: has_firewalld

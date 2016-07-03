@@ -2,4 +2,3 @@
 # defaults file for ansible-pre-deploy
 upgrade_mode: "safe"
 hosts_split: true
-replace_firewalld_with_iptables: true

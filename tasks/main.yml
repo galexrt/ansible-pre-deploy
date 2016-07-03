@@ -14,6 +14,3 @@
 
 - include: fedora-install.yml
   when: not is_atomic and ansible_distribution == "Fedora"
-
-- include: firewall.yml
-  when: replace_firewalld_with_iptables

@@ -12,5 +12,9 @@
 
 - include: upgrade.yml
 
+- include: fedora-install.yml
+  when: not is_atomic and ansible_distribution == "Fedora"
+
 - include: firewalld.yml
   when: disable_firewalld
+test

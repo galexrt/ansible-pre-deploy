@@ -10,7 +10,7 @@ ff02::3 ip6-allhosts
 
 # Inventory IPv4 records
 {% for host in groups['all'] %}
-{% if hostvars[host].ansible_default_ipv4.address is defined %}
+{% if hostvars[host].ansible_default_ipv4 is defined and hostvars[host].ansible_default_ipv4.address is defined %}
 {{ hostvars[host].ansible_default_ipv4.address }} {{ host }} {% if hosts_split|default(true) %}{% for n in range(host.split('.')|length)|reverse -%}
 {% set n = n + 1 %}
 {% if not loop.first %}{{ host.split('.')[0:n]|join('.') }}{% if not loop.last %} {% endif %}{% endif %}
@@ -20,10 +20,9 @@ ff02::3 ip6-allhosts
 
 {% endfor %}
 
-
 # Inventory IPv6 records
 {% for host in groups['all'] %}
-{% if hostvars[host].ansible_default_ipv6.address is defined %}
+{% if hostvars[host].ansible_default_ipv6 is defined and hostvars[host].ansible_default_ipv6.address is defined %}
 {{ hostvars[host].ansible_default_ipv6.address }} {{ host }} {% if hosts_split|default(true) %}{% for n in range(host.split('.')|length)|reverse -%}
 {% set n = n + 1 %}
 {% if not loop.first %}{{ host.split('.')[0:n]|join('.') }}{% if not loop.last %} {% endif %}{% endif %}

@@ -1,4 +1,3 @@
 ---
 # defaults file for ansible-pre-deploy
-upgrade_mode: "safe"
 hosts_split: true

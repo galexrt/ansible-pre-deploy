@@ -2,6 +2,7 @@
 - name: Get current hostname
   shell: "hostnamectl || hostname"
   register: hostname_out
+  changed_when: "'{{ inventory_hostname }}' not in hostname_out.stdout"
 
 - name: Set Inventory Name as Hostname
   shell: "hostnamectl set-hostname {{ inventory_hostname }} || hostname {{ inventory_hostname }}"

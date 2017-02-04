@@ -9,6 +9,6 @@ RAM:       {{ (ansible_memtotal_mb / 1000) | round(1) }}GB
 Provider:  {{ SERVER_PROVIDER|default('No provider given') }}
 Location:  {{ SERVER_LOCATION|default('No location given') }}
 Desc:      {{ SERVER_DESCRIPTION|default('No description given') }}
-AnsiGroup: {% for group in group_names %}{% for host in groups[group] %}{% if host == inventory_hostname %}{{- group -}}{% if not loop.last %},{% endif %}{% endif %}{% endfor %}{% endfor %}
+AnsiGroup: {% for group in group_names %}{{ group }}{% if not loop.last %}, {% endif %}{% endfor %}
 
 State:     !! DEPLOYMENT IN PROGRESS !!

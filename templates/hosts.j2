@@ -8,6 +8,7 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 
+{% if hosts_inventory_ipv4 %}
 # Inventory IPv4 records
 {% for host in groups['all'] %}
 {% if hostvars[host].ansible_default_ipv4 is defined and hostvars[host].ansible_default_ipv4.address is defined %}
@@ -19,6 +20,8 @@ ff02::3 ip6-allhosts
 {% endif %}
 
 {% endfor %}
+{% endif %}
+{% if hosts_inventory_ipv6 %}
 
 # Inventory IPv6 records
 {% for host in groups['all'] %}
@@ -31,3 +34,4 @@ ff02::3 ip6-allhosts
 {% endif %}
 
 {% endfor %}
+{% endif %}

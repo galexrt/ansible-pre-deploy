@@ -2,5 +2,5 @@
 # defaults file for ansible-pre-deploy
 hosts_split: true
 
-hosts_inventory_ipv4: true
-hosts_inventory_ipv6: true
+hosts_inventory_ipv4: false
+hosts_inventory_ipv6: false

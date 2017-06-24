@@ -10,7 +10,7 @@
 # Generate /etc/hosts file
 - include: hosts.yml
 
-- include: upgrade.yml
+- include: basic_packages.yml
 
 - include: fedora-install.yml
   when: not is_atomic and ansible_distribution == "Fedora"

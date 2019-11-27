@@ -4,7 +4,7 @@
   action: "{{ ansible_pkg_mgr }}"
   args:
     name: "{{ item }}"
-    state: installed
+    state: latest
   with_items:
    - socat
    - htop

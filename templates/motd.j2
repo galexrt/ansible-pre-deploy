@@ -1,14 +1,14 @@
 Hostname:  {{ inventory_hostname }}
-Def IPv4:  {{ ansible_default_ipv4.address|default('No IPv4 address detected') }}
-Def IPv6:  {{ ansible_default_ipv6.address|default('No IPv6 address detected') }}
+Def IPv4:  {{ ansible_default_ipv4.address | default('No IPv4 address detected') }}
+Def IPv6:  {{ ansible_default_ipv6.address | default('No IPv6 address detected') }}
 Virtual:   {{ 'Yes' if ansible_virtualization_role == 'guest' else 'No' }}
-Distro:    {{ ansible_distribution }} {{ ansible_distribution_version }} {{ ansible_distribution_release }}
+Distro:    {{ ansible_distribution }} {{ ansible_distribution_version | string }} {{ ansible_distribution_release | string }}
 Arch:      {{ ansible_architecture }}
-CPUs:      {{ ansible_processor_vcpus }}
-RAM:       {{ (ansible_memtotal_mb / 1000) | round(1) }}GB
-Provider:  {{ SERVER_PROVIDER|default('No provider given') }}
-Location:  {{ SERVER_LOCATION|default('No location given') }}
-Desc:      {{ SERVER_DESCRIPTION|default('No description given') }}
-AnsiGroup: {% for group in group_names %}{{ group }}{% if not loop.last %}, {% endif %}{% endfor %}
-
+CPUs:      {{ ansible_processor_vcpus | string }}
+RAM:       {{ (ansible_memtotal_mb / 1000) | round(1) | string }}GB
+Provider:  {{ SERVER_PROVIDER | default('No provider given') }}
+Location:  {{ SERVER_LOCATION | default('No location given') }}
+Desc:      {{ SERVER_DESCRIPTION | default('No description given') }}
+AnsiGroup: {% for group in group_names %}{{ group }}{% if not loop.last %}, {% endif %}{%- endfor %}
 State:     !! DEPLOYMENT IN PROGRESS !!
+

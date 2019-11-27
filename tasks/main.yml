@@ -13,4 +13,4 @@
 - include: basic_packages.yml
 
 - include: fedora-install.yml
-  when: not is_atomic and ansible_distribution == "Fedora"
+  when: (is_atomic is defined or not is_atomic) and ansible_distribution == "Fedora"

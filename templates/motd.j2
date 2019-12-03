@@ -10,5 +10,6 @@ Provider:  {{ SERVER_PROVIDER | default('No provider given') }}
 Location:  {{ SERVER_LOCATION | default('No location given') }}
 Desc:      {{ SERVER_DESCRIPTION | default('No description given') }}
 AnsiGroup: {% for group in group_names %}{{ group }}{% if not loop.last %}, {% endif %}{%- endfor %}
+
 State:     !! DEPLOYMENT IN PROGRESS !!
 

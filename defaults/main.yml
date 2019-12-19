@@ -4,3 +4,6 @@ hosts_split: true
 
 hosts_inventory_ipv4: false
 hosts_inventory_ipv6: false
+
+#hosts_custom: |
+#  127.0.0.1 example.com

@@ -1,3 +1,4 @@
+{{ ansible_managed | comment }}
 # localhost records
 127.0.0.1 localhost.localdomain localhost
 # IPv6 only records
@@ -34,4 +35,7 @@ ff02::3 ip6-allhosts
 {% endif %}
 
 {% endfor %}
+{% endif %}
+{% if hosts_custom %}
+{{ hosts_custom }}
 {% endif %}

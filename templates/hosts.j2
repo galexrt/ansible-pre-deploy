@@ -36,6 +36,7 @@ ff02::3 ip6-allhosts
 
 {% endfor %}
 {% endif %}
-{% if hosts_custom %}
-{{ hosts_custom }}
+{% if hosts_custom is defined %}
+# Hosts Custom
+{{ hosts_custom | string }}
 {% endif %}

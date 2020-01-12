@@ -3,12 +3,11 @@
 - name: Install some basic packages
   action: "{{ ansible_pkg_mgr }}"
   args:
-    name: "{{ item }}"
+    name:
+     - socat
+     - htop
+     - iotop
+     - vim
+     - git
+     - rsync
     state: latest
-  with_items:
-   - socat
-   - htop
-   - iotop
-   - vim
-   - git
-   - rsync

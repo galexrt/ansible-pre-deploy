@@ -1,8 +1,7 @@
 ---
 # The following packages are "basic packages" that I think a system should have installed
 - name: Install some basic packages
-  action: "{{ ansible_pkg_mgr }}"
-  args:
+  package:
     name:
      - socat
      - htop

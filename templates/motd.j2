@@ -1,7 +1,7 @@
 Hostname:  {{ inventory_hostname }}
 Def IPv4:  {{ ansible_default_ipv4.address | default('No IPv4 address detected') }}
 Def IPv6:  {{ ansible_default_ipv6.address | default('No IPv6 address detected') }}
-Virtual:   {{ 'Yes' if ansible_virtualization_role == 'guest' else 'No' }}
+Virtual:   {{ 'Yes' if ansible_virtualization_role is defined and ansible_virtualization_role == 'guest' else 'No' }}
 Distro:    {{ ansible_distribution }} {{ ansible_distribution_version | string }} {{ ansible_distribution_release | string }}
 Arch:      {{ ansible_architecture }}
 CPUs:      {{ ansible_processor_vcpus | int }}

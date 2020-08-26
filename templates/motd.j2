@@ -4,8 +4,8 @@ Def IPv6:  {{ ansible_default_ipv6.address | default('No IPv6 address detected')
 Virtual:   {{ 'Yes' if ansible_virtualization_role is defined and ansible_virtualization_role == 'guest' else 'No' }}
 Distro:    {{ ansible_distribution }} {{ ansible_distribution_version | string }} {{ ansible_distribution_release | string }}
 Arch:      {{ ansible_architecture }}
-CPUs:      {{ ansible_processor_vcpus | int }}
-RAM:       {{ (ansible_memtotal_mb / 1000) | round(1) | int }}GB
+CPUs:      {{ ansible_processor_vcpus | string }}
+RAM:       {{ (ansible_memtotal_mb / 1000) | round(1) | string }}GB
 Provider:  {{ SERVER_PROVIDER | default('No provider given') }}
 Location:  {{ SERVER_LOCATION | default('No location given') }}
 Desc:      {{ SERVER_DESCRIPTION | default('No description given') }}

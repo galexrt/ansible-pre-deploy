@@ -9,4 +9,6 @@
      - vim
      - git
      - rsync
+     - pciutils
+     - ethtool
     state: latest

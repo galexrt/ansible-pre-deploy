@@ -1,6 +1,6 @@
 ---
 # The following packages are "basic packages" that I think a system should have installed
-- name: Install some basic packages
+- name: Install some basic packages (Fedora)
   package:
     name:
      - socat
@@ -12,3 +12,15 @@
      - pciutils
      - ethtool
     state: latest
+  when: ansible_distribution == 'Fedora'
+
+- name: Install some basic packages (Debian)
+  package:
+    name:
+      - socat
+      - htop
+      - iotop
+      - vim
+      - git
+      - rsync
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

@@ -1,9 +1,9 @@
 ---
 - name: Get current hostname
-  shell: "hostnamectl || hostname"
+  ansible.builtin.shell: "hostnamectl || hostname"
   register: hostname_out
   changed_when: hostname_out.stdout is defined and inventory_hostname not in hostname_out.stdout
 
 - name: Set Inventory Name as Hostname
-  shell: "hostnamectl set-hostname {{ inventory_hostname }} || hostname {{ inventory_hostname }}"
+  ansible.builtin.shell: "hostnamectl set-hostname {{ inventory_hostname }} || hostname {{ inventory_hostname }}"
   when: hostname_out.stdout is defined and inventory_hostname not in hostname_out.stdout

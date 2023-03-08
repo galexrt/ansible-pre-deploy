@@ -1,6 +1,6 @@
 ---
 - name: Send out ansible deployment started broadcast message
-  shell: |
+  ansible.builtin.shell: |
     echo '+---------------------------------------+
     | => ANSIBLE DEPLOYMENT HAS STARTED! <= |
     +---------------------------------------+' | wall

@@ -1,16 +1,16 @@
 ---
-- include: wall.yml
+- include_tasks: wall.yml
 
 # Set hostname to inventory_hostname
-- include: hostname.yml
+- include_tasks: hostname.yml
 
 # Generate custom motd file
-- include: motd.yml
+- include_tasks: motd.yml
 
 # Generate /etc/hosts file
-- include: hosts.yml
+- include_tasks: hosts.yml
 
-- include: basic_packages.yml
+- include_tasks: basic_packages.yml
 
-- include: fedora-install.yml
+- include_tasks: fedora-install.yml
   when: (is_atomic is defined or not is_atomic) and ansible_distribution == "Fedora"

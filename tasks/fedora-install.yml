@@ -1,6 +1,6 @@
 ---
 - name: Generic | Install Firewalld Python2 Package
-  package:
+  ansible.builtin.package:
     name: python-firewall
     state: latest
   when: ansible_distribution_major_version|int >= 22

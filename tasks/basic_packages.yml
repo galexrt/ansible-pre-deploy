@@ -1,7 +1,7 @@
 ---
 # The following packages are "basic packages" that I think a system should have installed
 - name: Install some basic packages (Fedora)
-  package:
+  ansible.builtin.package:
     name:
      - socat
      - htop
@@ -15,7 +15,7 @@
   when: ansible_distribution == 'Fedora'
 
 - name: Install some basic packages (Debian)
-  package:
+  ansible.builtin.package:
     name:
       - socat
       - htop
